@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas</title>
+</head>
+<body>
+    <button><a href="/formularioCita/">Crear Cita</a> </button>
+    <table>
+        <tr>
+          
+          <th>Nombre</th>          
+          <th>Documento</th>         
+          <th>Telefono</th>         
+          
+        </tr>
+        
+           {% for listar in lrClientes %}
+          <tr>
+
+           
+            <td>{{listar.nombre}}</td>
+            <td>{{listar.documento}}</td>
+            <td>{{listar.telefono}}</td>
+            <td><button><a href="{% url 'editarCliente' listar.idCliente %}">Editar</a> </button></td>
+          </tr>
+          {% endfor %}
+
+      <table>
+          
+        <tr> 
+          <th>Id Cliente</th>
+          <th>Fecha de cita</th>
+          <th>Servicio</th>
+        </tr> 
+        {% for listar in crcita %}
+          <tr>
+
+            <td>{{listar.idCliente_id}}</td>
+            <td>{{listar.fecha}}</td>
+            <td>{{listar.servicio}}</td>
+            <td><button><a href="{% url 'editarCita' listar.idCitas %}">Editar</a> </button></td>
+          </tr>
+        {% endfor %}     
+        
+          
+        </tr>
+      </table>
+      
+     
+    
+</body>
+</html>

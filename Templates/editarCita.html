@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITAR</title>
+</head>
+<body>
+
+    <form action="{% url 'actualizarCita' ver.idCitas %}" method="GET">
+        
+
+        <label for="">Fecha de cita</label>
+        <input type="date" name="fechaCita" value="{{ver.fecha}}">
+        <label>Servicio</label>
+        <select name="servicioCita" id="">
+            <option value="{{ver.servicio}}">{{ver.servicio}}</option>
+            <option value="masaje">Masaje</option>
+            <option value="exfoliacion">Exfoliacion</option>
+            <option value="depilacion">Depilacion</option>
+            <option value="chocolaterapia">Chocolaterapia</option>
+        </select>
+
+        <button type="submit">Guardar</button>
+    </form>
+    
+</body>
+</html>
